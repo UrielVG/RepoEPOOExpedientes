@@ -14,5 +14,5 @@ public interface Dao {
     public boolean alta(Object o);
     public ArrayList consulta(int id);
     public void actualiza(Object o);
-    //Este es un comentario
+    
 }
