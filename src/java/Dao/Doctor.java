@@ -10,9 +10,9 @@ package Dao;
  * @author Unitec
  */
 public class Doctor extends Persona {
-    private String cedula,clave;
+    private String cedula,clave,usuario;
     private int idDoctor;
-    Doctor D=new Doctor();
+    
     
 
     /**
@@ -55,6 +55,20 @@ public class Doctor extends Persona {
      */
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    /**
+     * @return the usuario
+     */
+    public String getUsuario() {
+        return usuario;
+    }
+
+    /**
+     * @param usuario the usuario to set
+     */
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
     
 }

@@ -12,7 +12,7 @@ package Dao;
 import java.util.*;
 public interface Dao {
     public boolean alta(Object o);
-    public ArrayList consulta(int id);
+    public ArrayList consulta();
     public void actualiza(Object o);
     
 }

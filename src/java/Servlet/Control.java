@@ -7,6 +7,7 @@ package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,19 +32,31 @@ public class Control extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Control</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Control at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        String pagina=request.getParameter("pagina");
+        if(pagina.equals("login"))
+        {
+            boolean existe=login(request.getParameter("usuario"),request.getParameter("contrasena"));
         }
+    }
+    public boolean login(String usuario,String contra)
+    {
+        boolean existe=false;
+        Dao.Doctor doc=new Dao.Doctor();
+        doc.setUsuario(usuario);
+        doc.setClave(contra);
+        ArrayList<Dao.Doctor> doctores=new ArrayList();
+        Dao.DoctorDao daodoc=new Dao.DoctorDao();
+        doctores=daodoc.consulta();
+        for(Dao.Doctor doctor:doctores)
+        {
+            if(doctor.getUsuario().equals(doc.getUsuario())&&doctor.getClave().equals(doc.getClave()))
+            {
+                existe=true;
+                
+            }
+        }
+        return existe;
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

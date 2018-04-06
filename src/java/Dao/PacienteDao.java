@@ -65,7 +65,7 @@ public class PacienteDao implements Dao{
     }
 
     @Override
-    public ArrayList consulta(int id) {
+    public ArrayList consulta() {
         ArrayList<Persona> lista=null;
         try
         {

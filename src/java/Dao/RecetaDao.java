@@ -19,7 +19,7 @@ public class RecetaDao implements Dao{
     }
 
     @Override
-    public ArrayList consulta(int id) {
+    public ArrayList consulta() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
