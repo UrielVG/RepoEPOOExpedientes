@@ -1,22 +1,20 @@
 <%-- 
-    Document   : ConsultaDoctor
-    Created on : 1/04/2018, 09:30:53 PM
-    Author     : TechM User
+    Document   : Principal
+    Created on : 6/04/2018, 02:38:06 PM
+    Author     : Uriel Villegas
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-    <meta charset="utf-8">
+<html>
+    <head>
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Control Expedientes</title>
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,12 +37,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-
-<body>
-    <%@taglib uri="/WEB-INF/META-INF/AltaDoctor" prefix="c" %>
-    <div id="wrapper">
+    </head>
+    <body>
+        <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -55,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Expedientes</a>
+                <a class="navbar-brand" href="index.html">Control de Consultas Medicas</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -81,26 +76,27 @@
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Consulta<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="ConsultaUsuariosDelSistema.jsp"> Usuario del sistema</a>
-                                </li>
+                                
                                 <li>
                                     <a href="ConsultaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaHospital.jsp"> Hospital</a>
+                                    <a href="ConsultaHospital.jsp"> Medicinas</a>
                                 </li>
                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaExpedienteClinico.jsp"> Expediente clíinico</a>
+                                    <a href="ConsultaExpedienteClinico.jsp"> Diagnosticos</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaExpedienteClinico.jsp"> Diagnosticos</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Alta<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Registrar nuevo <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="panels-wells.html"> Usuario del sistema</a>
@@ -109,16 +105,16 @@
                                     <a href="buttons.html"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html"> Hospital</a>
+                                    <a href="notifications.html"> Medicina </a>
                                 </li>
                                 <li>
-                                    <a href="CnsultaDoctor.jsp"> Doctor</a>
+                                    <a href="typography.html"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Consulta</a>
+                                    <a href="icons.html"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="grid.html"> Expediente clíinico</a>
+                                    <a href="grid.html"> Consulta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -133,47 +129,16 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Consulta doctores</h1>
-                </div>
-                <!-- /#tabla -->
-                <div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Doctor
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Paterno</th>
-                                                <th>Materno</th>
-                                                <th>E-Mail</th>
-                                                <th>Telefono</th>
-                                                <th>Cedula</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:AltaDoctor/>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.table-responsive -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
+                    <h1 class="page-header">Control de expedientes - Selecciona una opción</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
         </div>
-        
-    
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -190,6 +155,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-</body>
-
+    </body>
 </html>

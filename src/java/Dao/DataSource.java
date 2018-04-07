@@ -19,11 +19,14 @@ public class DataSource {
             try
             {
                 Class.forName("com.mysql.jdbc.Driver");
-                c=DriverManager.getConnection("jdbc:mysql://localhost:3306/javaDB","root","unitec");
+                System.out.println("conectando...");
+                c=DriverManager.getConnection("jdbc:mysql://localhost:3306/clinicaDB","root","root");
+                
             }
             catch(Exception e)
             {
                 e.printStackTrace();
+                System.out.println("Error en conexion");
             }
             return c;
     }

@@ -35,18 +35,23 @@ public class Control extends HttpServlet {
         String pagina=request.getParameter("pagina");
         if(pagina.equals("login"))
         {
-            boolean existe=login(request.getParameter("usuario"),request.getParameter("contrasena"));
+            
+            boolean existe=login(request,response);
+            if(existe)
+                response.sendRedirect("pages/Principal.jsp");
         }
     }
-    public boolean login(String usuario,String contra)
+    public boolean login(HttpServletRequest request, HttpServletResponse response)
     {
         boolean existe=false;
         Dao.Doctor doc=new Dao.Doctor();
-        doc.setUsuario(usuario);
-        doc.setClave(contra);
-        ArrayList<Dao.Doctor> doctores=new ArrayList();
+        doc.setUsuario(request.getParameter("usuario"));
+        doc.setClave(request.getParameter("contrasena"));
         Dao.DoctorDao daodoc=new Dao.DoctorDao();
-        doctores=daodoc.consulta();
+        ArrayList<Dao.Doctor> doctores;
+        doctores = daodoc.consulta();
+        
+        
         for(Dao.Doctor doctor:doctores)
         {
             if(doctor.getUsuario().equals(doc.getUsuario())&&doctor.getClave().equals(doc.getClave()))

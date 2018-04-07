@@ -13,44 +13,39 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 /**
- *
- * @author TechM User
+ * 
+ * @author Uriel Villegas
  */
 public class ConsultaDoctor extends TagSupport{
-    ArrayList<Doctor> listadoctor;
+    ArrayList<Doctor> doctores;
     @Override
     public int doStartTag() throws JspException {
         System.out.println("estas dentro dostartag de consultadoctor");
         
         DoctorDao dd = new DoctorDao();
         
-        listadoctor = dd.consulta();
+        doctores = dd.consulta();
         
         JspWriter out=pageContext.getOut();
         
-        if(listadoctor.isEmpty()){
+        if(doctores.isEmpty()){
             System.out.println("No hay doctores");
         }else{
-            for (Doctor doctor : listadoctor) {
+            for (Doctor doctor : doctores) {
                 System.out.println(doctor.getNombre());
                 try {
                     out.println("<tr>");
-                    out.println("<td>" + doctor.getIddoctor() + "</td>");
+                    out.println("<td>" + doctor.getIdDoctor() + "</td>");
                     out.println("<td>" + doctor.getNombre()+ "</td>");
-                    out.println("<td>" + doctor.getApellidopaterno()+ "</td>");
-                    out.println("<td>" + doctor.getApellidomaterno() + "</td>");
-                    out.println("<td>" + doctor.getTitulo()+ "</td>");
-                    out.println("<td>" + doctor.getSalario()+ "</td>");
-                    out.println("<td>" + doctor.getIdhospital()+ "</td>");
+                    out.println("<td>" + doctor.getPaterno()+ "</td>");
+                    out.println("<td>" + doctor.getMaterno() + "</td>");
+                    out.println("<td>" + doctor.getEdad()+ "</td>");
+                    out.println("<td>" + doctor.getCedula()+ "</td>");
+                    
                     out.println("</tr>");
-    //            <tr>
-    //                <td>1</td>
-    //                <td>Mark</td>
-    //                <td>Otto</td>
-    //                <td>@mdo</td>
-    //            </tr>
+    
                 } catch (IOException ex) {
-                    Logger.getLogger(ConsultaDoctor.class.getName()).log(Level.SEVERE, null, ex);
+                    ex.printStackTrace();
                 }
 
             }

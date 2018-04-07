@@ -16,6 +16,7 @@ public abstract class Persona {
     private String materno;
     private String email;
     private String telefono;
+    private int edad;
 
     /**
      * @return the idPersona
@@ -99,6 +100,20 @@ public abstract class Persona {
      */
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    /**
+     * @return the edad
+     */
+    public int getEdad() {
+        return edad;
+    }
+
+    /**
+     * @param edad the edad to set
+     */
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
     
 }
