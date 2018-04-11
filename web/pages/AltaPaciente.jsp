@@ -1,22 +1,20 @@
 <%-- 
-    Document   : ConsultaPaciente
-    Created on : 3/04/2018, 09:58:26 PM
-    Author     : TechM User
+    Document   : AltaPaciente
+    Created on : 9/04/2018, 12:21:59 PM
+    Author     : Uriel Villegas
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-    <meta charset="utf-8">
+<html>
+    <head>
+        <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Control Expedientes</title>
+    <title>Alta PAciente</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,12 +37,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-</head>
-
-<body>
-    <%@taglib uri="/WEB-INF/META-INF/ConsultaPaciente" prefix="c" %>
-    <div id="wrapper">
+    </head>
+    <body>
+        
+        <div id="wrapper">
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -55,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Expedientes</a>
+                <a class="navbar-brand" href="index.html">Alta Paciente</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -134,38 +130,75 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
-         <div class="row">
+        
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Forms</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Datos del Paciente
                         </div>
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nombre</th>
-                                        <th>Paterno</th>
-                                        <th>Materno</th>
-                                        <th>Edad</th>
-                                        <th>E-Mail</th>
-                                        <th>Telefono</th>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" action="../control" method="post">
+                                        <input type="hidden" name="pagina" value="altaPaciente">
+                                        <div class="form-group">
+                                            <label>Nombre(s)</label>
+                                            <input class="form-control" name="nombre"  >
+                                            <p class="help-block">Ej.Uriel Manuel</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellido Paterno</label>
+                                            <input class="form-control" name="paterno">
+                                            <p class="help-block">Ej.Villegas</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellido Materno</label>
+                                            <input class="form-control" name="materno">
+                                            <p class="help-block">Ej.Garduño</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Edad</label>
+                                            <select class="form-control" name="edad" >
+                                                <%
+                                                    for(int i=1;i<100;i++)
+                                                    {
+                                                %>
+                                                <option><%=i%></option>
+                                                <%
+                                                    }
+                                                %>
+                                                
+                                            </select>
+                                        </div>
                                         
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="gradeA">
-                                        <c:ConsultaPaciente/>
+                                        <div class="form-group">
+                                            <label>E-Mail</label>
+                                            <input class="form-control" name="email" >
+                                            <p class="form-control-static">email@example.com</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input class="form-control" name="telefono" type="tel" maxlength="10"  minlength="8">
+                                            <p class="help-block">10 digitos maximo</p>
+                                        </div>
+                                        <button type="submit" class="btn btn-default">Aceptar</button>
+                                        <button type="reset" class="btn btn-default">Borrar Todo</button>
                                         
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                            
+                                    </form>
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                            </div>
+                            <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -173,8 +206,13 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-        
-    
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
 
@@ -184,13 +222,7 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="../vendor/raphael/raphael.min.js"></script>
-    <script src="../vendor/morrisjs/morris.min.js"></script>
-    <script src="../data/morris-data.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-</body>
-
+    </body>
 </html>

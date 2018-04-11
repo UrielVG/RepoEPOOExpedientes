@@ -32,16 +32,20 @@ public class DoctorDao implements Dao{
            int r=ps.executeUpdate();
            if(r>0)
                b=true;
-           String sql2="select top 1 idPersona from persona order by 1 desc";
+           b=false;
+           Persona per=(Persona)o;
+           PersonaDao pd=new PersonaDao();
+           b=pd.alta(per);
+           String sql2="select idPersona from persona order by 1 desc limit 1";
            Statement s=c.createStatement();
            ResultSet rs=s.executeQuery(sql);
            int idpersona=rs.getInt("idpersona");
            rs.close();
            
-           String sql3="select top 1 iddoctor from doctor order by 1 desc";
+           String sql3="select iddoctor from doctor order by 1 desc limit 1";
            Statement s1=c.createStatement();
            ResultSet rs2=s.executeQuery(sql);
-           int iddoctor=rs.getInt("iddoctor");
+           int iddoctor=rs2.getInt("iddoctor");
            rs2.close();
            
            String sql1="insert into personadoctor(iddoctor,idpersona) values(?,?)";
@@ -70,7 +74,7 @@ public class DoctorDao implements Dao{
         try
         {
             Connection c=new DataSource().getConexion();
-            String sql="select p.idpersona,d.iddoctor,p.nombre,p.apaterno,p.amaterno,cedula,telefono,usuario,contraseña,email from Doctor d join personadoctor pd on pd.iddoctor=d.iddoctor join persona p on p.idpersona=pd.idpersona";
+            String sql="select p.idpersona,d.iddoctor,p.nombre,p.apaterno,p.amaterno,cedula,telefono,usuario,contraseña,email,edad from Doctor d join personadoctor pd on pd.iddoctor=d.iddoctor join persona p on p.idpersona=pd.idpersona";
             PreparedStatement ps=c.prepareStatement(sql);
             ResultSet r=ps.executeQuery();
             lista=new ArrayList();
@@ -87,6 +91,7 @@ public class DoctorDao implements Dao{
                 doc.setTelefono(r.getString("telefono"));
                 doc.setUsuario(r.getString("usuario"));
                 doc.setClave(r.getString("contraseña"));
+                doc.setEdad(r.getInt("edad"));
                 lista.add(doc);
             }
             r.close();

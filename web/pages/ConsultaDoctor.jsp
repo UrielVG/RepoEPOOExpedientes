@@ -43,7 +43,7 @@
 </head>
 
 <body>
-    <%@taglib uri="/WEB-INF/META-INF/AltaDoctor" prefix="c" %>
+    <%@taglib uri="/WEB-INF/META-INF/ConsultaDoctor" prefix="c" %>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -81,44 +81,49 @@
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Consulta<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="ConsultaUsuariosDelSistema.jsp"> Usuario del sistema</a>
-                                </li>
+                                
                                 <li>
                                     <a href="ConsultaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaHospital.jsp"> Hospital</a>
+                                    <a href="ConsultaMedicina.jsp"> Medicinas</a>
                                 </li>
                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaExpedienteClinico.jsp"> Expediente clíinico</a>
+                                    <a href="ConsultaDiagnostico.jsp"> Diagnosticos</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaTratamiento.jsp"> Tratamiento</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Alta<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Altas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                
                                 <li>
-                                    <a href="panels-wells.html"> Usuario del sistema</a>
+                                    <a href="AltaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html"> Paciente</a>
+                                    <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html"> Hospital</a>
+                                    <a href="AltaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="CnsultaDoctor.jsp"> Doctor</a>
+                                    <a href="AltaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Consulta</a>
+                                    <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="grid.html"> Expediente clíinico</a>
+                                    <a href="AltaConsulta.jsp"> Consulta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -129,49 +134,55 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Consulta doctores</h1>
-                </div>
-                <!-- /#tabla -->
-                <div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Doctor
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Paterno</th>
-                                                <th>Materno</th>
-                                                <th>E-Mail</th>
-                                                <th>Telefono</th>
-                                                <th>Cedula</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:AltaDoctor/>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.table-responsive -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
+                    <h1 class="page-header">Consulta Doctores</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Doctores Registrados
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Paterno</th>
+                                        <th>Materno</th>
+                                        <th>Edad</th>
+                                        <th>Email</th>
+                                        <th>Teléfono</th>
+                                        <th>Cedula</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeA">
+                                        <c:ConsultaDoctor/>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
         </div>
+
+    </div>
+                                        
         
     
     <!-- jQuery -->

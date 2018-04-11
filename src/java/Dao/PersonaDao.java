@@ -22,7 +22,7 @@ public class PersonaDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into persona(nombre,aPaterno,aMaterno,email,telefono) values(?,?,?,?,?)";
+           String sql="insert into persona(nombre,aPaterno,aMaterno,email,telefono,edad) values(?,?,?,?,?,?)";
            PreparedStatement ps=c.prepareStatement(sql);
            Persona per=(Persona)o;
            ps.setString(1,per.getNombre());
@@ -30,6 +30,7 @@ public class PersonaDao implements Dao{
            ps.setString(3, per.getMaterno());
            ps.setString(4, per.getEmail());
            ps.setString(5, per.getTelefono());
+           ps.setInt(6, per.getEdad());
            int r=ps.executeUpdate();
            if(r>0)
                b=true;

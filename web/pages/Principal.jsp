@@ -58,7 +58,10 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>
+                        
+                        
+                        <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
@@ -81,28 +84,26 @@
                                     <a href="ConsultaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaHospital.jsp"> Medicinas</a>
+                                    <a href="ConsultaMedicamento.jsp"> Medicinas</a>
                                 </li>
                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaExpedienteClinico.jsp"> Diagnosticos</a>
+                                    <a href="ConsultaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaExpedienteClinico.jsp"> Diagnosticos</a>
+                                    <a href="Recetas.jsp">Recetas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Registrar nuevo <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Altas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                
                                 <li>
-                                    <a href="panels-wells.html"> Usuario del sistema</a>
-                                </li>
-                                <li>
-                                    <a href="buttons.html"> Paciente</a>
+                                    <a href="AltaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
                                     <a href="notifications.html"> Medicina </a>
@@ -129,7 +130,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Control de expedientes - Selecciona una opción</h1>
+                    <h1 class="page-header">Bienvenido</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

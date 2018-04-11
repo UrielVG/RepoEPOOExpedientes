@@ -51,7 +51,8 @@ public class TratamientoDao implements Dao{
         try
         {
             Connection c=new DataSource().getConexion();
-            String sql="select * from Tratamiento";
+            String sql="select * from Tratamiento t join diagnostico d on d.iddiagnostico=t.iddiagnostico"
+                    + "join medicamento m on m.idmedicamento=t.idmedicamento";
             PreparedStatement ps=c.prepareStatement(sql);
             ResultSet r=ps.executeQuery();
             tratamientos=new ArrayList();
@@ -61,7 +62,8 @@ public class TratamientoDao implements Dao{
                 tratamiento.setIdTratamiento(r.getInt("idTratamiento"));
                 tratamiento.setIdDiagnostico(r.getInt("idDiagnostico"));
                 tratamiento.setIdMedicamento(r.getInt("idMedicamento"));
-                
+                tratamiento.setDiagnostico(r.getString("d.nombre"));
+                tratamiento.setMedicamento(r.getString("m.nombre"));
                 tratamientos.add(tratamiento);
             }
             r.close();

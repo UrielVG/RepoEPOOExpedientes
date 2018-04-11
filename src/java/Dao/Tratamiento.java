@@ -13,6 +13,8 @@ public class Tratamiento {
     private int idTratamiento;
     private int idMedicamento;
     private int idDiagnostico;
+    private String diagnostico;
+    private String medicamento;
 
     /**
      * @return the idTratamiento
@@ -54,6 +56,34 @@ public class Tratamiento {
      */
     public void setIdDiagnostico(int idDiagnostico) {
         this.idDiagnostico = idDiagnostico;
+    }
+
+    /**
+     * @return the diagnostico
+     */
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    /**
+     * @param diagnostico the diagnostico to set
+     */
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    /**
+     * @return the medicamento
+     */
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    /**
+     * @param medicamento the medicamento to set
+     */
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
     }
     
 }

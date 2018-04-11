@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import Dao.*;
 /**
  *
  * @author Unitec
@@ -36,27 +36,47 @@ public class Control extends HttpServlet {
         if(pagina.equals("login"))
         {
             
-            boolean existe=login(request,response);
-            if(existe)
+            Doctor existe=login(request.getParameter("usuario"),request.getParameter("contrasena"));
+            if(existe!=null){
+                request.setAttribute("usuario", existe);
                 response.sendRedirect("pages/Principal.jsp");
+            }
+            
+        }
+        if(pagina.equals("altaPaciente"))
+        {
+            Paciente pa=new Paciente();
+            
+            pa.setNombre(request.getParameter("nombre"));
+            pa.setPaterno(request.getParameter("paterno"));
+            pa.setMaterno(request.getParameter("materno"));
+            pa.setEdad(Integer.parseInt(request.getParameter("edad")));
+            pa.setEmail(request.getParameter("email"));
+            pa.setTelefono(request.getParameter("telefono"));
+            PacienteDao pd= new PacienteDao();
+            boolean correcto=pd.alta(pa);
+            if(correcto)
+                response.sendRedirect("login.html");
+            else
+                response.sendRedirect("AltaPaciente.jsp");
         }
     }
-    public boolean login(HttpServletRequest request, HttpServletResponse response)
+    public Doctor login(String usuario,String contrasena)
     {
-        boolean existe=false;
-        Dao.Doctor doc=new Dao.Doctor();
-        doc.setUsuario(request.getParameter("usuario"));
-        doc.setClave(request.getParameter("contrasena"));
-        Dao.DoctorDao daodoc=new Dao.DoctorDao();
-        ArrayList<Dao.Doctor> doctores;
+        Doctor existe=null;
+        Doctor doc=new Doctor();
+        doc.setUsuario(usuario);
+        doc.setClave(contrasena);
+        DoctorDao daodoc=new DoctorDao();
+        ArrayList<Doctor> doctores;
         doctores = daodoc.consulta();
         
         
-        for(Dao.Doctor doctor:doctores)
+        for(Doctor doctor:doctores)
         {
             if(doctor.getUsuario().equals(doc.getUsuario())&&doctor.getClave().equals(doc.getClave()))
             {
-                existe=true;
+                existe=doctor;
                 
             }
         }

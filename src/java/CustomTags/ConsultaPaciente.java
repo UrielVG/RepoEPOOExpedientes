@@ -17,8 +17,8 @@ import javax.servlet.jsp.tagext.TagSupport;
 
 
 /**
- *
- * @author TechM User
+ * 
+ * @author Uriel Villegas
  */
 public class ConsultaPaciente extends TagSupport{
     ArrayList<Paciente> pacientes;

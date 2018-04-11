@@ -16,6 +16,10 @@ public class Receta {
     private int idTratamiento;
     private String fecha;
     private String observacones;
+    private String nPaciente;
+    private String nDoctor;
+    private String diagnostico;
+    private String medicamento;
 
     /**
      * @return the idReceta
@@ -99,6 +103,62 @@ public class Receta {
      */
     public void setObservacones(String observacones) {
         this.observacones = observacones;
+    }
+
+    /**
+     * @return the nPaciente
+     */
+    public String getnPaciente() {
+        return nPaciente;
+    }
+
+    /**
+     * @param nPaciente the nPaciente to set
+     */
+    public void setnPaciente(String nPaciente) {
+        this.nPaciente = nPaciente;
+    }
+
+    /**
+     * @return the nDoctor
+     */
+    public String getnDoctor() {
+        return nDoctor;
+    }
+
+    /**
+     * @param nDoctor the nDoctor to set
+     */
+    public void setnDoctor(String nDoctor) {
+        this.nDoctor = nDoctor;
+    }
+
+    /**
+     * @return the diagnostico
+     */
+    public String getDiagnostico() {
+        return diagnostico;
+    }
+
+    /**
+     * @param diagnostico the diagnostico to set
+     */
+    public void setDiagnostico(String diagnostico) {
+        this.diagnostico = diagnostico;
+    }
+
+    /**
+     * @return the medicamento
+     */
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    /**
+     * @param medicamento the medicamento to set
+     */
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
     }
     
     

@@ -1,49 +1,18 @@
 <%-- 
-    Document   : ConsultaHospital
-    Created on : 3/04/2018, 09:36:02 PM
-    Author     : TechM User
+    Document   : ConsultaReceta
+    Created on : 10/04/2018, 07:10:08 PM
+    Author     : Uriel Villegas
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="es">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Control Expedientes</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-
-    <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-</head>
-
-<body>
-    <%@taglib uri="/WEB-INF/tld/ConsultaHospital" prefix="c" %>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <%@taglib uri="/WEB-INF/META-INF/ConsultaReceta" prefix="c" %>
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -55,7 +24,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Expedientes</a>
+                <a class="navbar-brand" href="index.html">Consulta Receta</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -81,44 +50,49 @@
                         <li>
                             <a href="#"><i class="fa fa-table fa-fw"></i> Consulta<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="ConsultaUsuariosDelSistema.jsp"> Usuario del sistema</a>
-                                </li>
+                                
                                 <li>
                                     <a href="ConsultaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaHospital.jsp"> Hospital</a>
+                                    <a href="ConsultaMedicina.jsp"> Medicinas</a>
                                 </li>
                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaExpedienteClinico.jsp"> Expediente clíinico</a>
+                                    <a href="ConsultaDiagnostico.jsp"> Diagnosticos</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaTratamiento.jsp"> Tratamiento</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-edit fa-fw"></i> Alta<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Altas <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
+                                
                                 <li>
-                                    <a href="panels-wells.html"> Usuario del sistema</a>
+                                    <a href="AltaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="buttons.html"> Paciente</a>
+                                    <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html"> Hospital</a>
+                                    <a href="AltaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="CnsultaDoctor.jsp"> Doctor</a>
+                                    <a href="AltaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Consulta</a>
+                                    <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="grid.html"> Expediente clíinico</a>
+                                    <a href="AltaConsulta.jsp"> Consulta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -129,45 +103,54 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Consulta hospital</h1>
-                </div>
-                <!-- /#tabla -->
-                <div>
-                    <div class="col-lg-6">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Hospital
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Dirección</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <c:ConsultaHospital/>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.table-responsive -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
+                    <h1 class="page-header">Consulta Recetas</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Recetas Registradas
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Paciente</th>
+                                        <th>Doctor</th>
+                                        <th>Medicamento</th>
+                                        <th>Diagnostico</th>
+                                        <th>Observaciones</th>
+                                        <th>Fecha</th>                                       
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="odd gradeX">
+                                        <c:ConsultaReceta/>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
         </div>
+
+    </div>
+                                        
         
     
     <!-- jQuery -->
@@ -186,6 +169,5 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
-</body>
-
+    </body>
 </html>

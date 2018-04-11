@@ -24,24 +24,28 @@ public class PacienteDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into paciente";
+           String sql="insert into paciente values()";
            PreparedStatement ps=c.prepareStatement(sql);
-           Paciente pac=(Paciente)o;
+           
            
            
            int r=ps.executeUpdate();
            if(r>0)
                b=true;
-           String sql2="select top 1 idPersona from persona order by 1 desc";
+           b=false;
+           Persona per=(Persona)o;
+           PersonaDao pd=new PersonaDao();
+           b=pd.alta(per);
+           String sql2="select idPersona from persona  order by 1 desc limit 1";
            Statement s=c.createStatement();
            ResultSet rs=s.executeQuery(sql);
            int idpersona=rs.getInt("idpersona");
            rs.close();
            
-           String sql3="select top 1 idpaciente from paciente order by 1 desc";
+           String sql3="select idpaciente from paciente order by 1 desc limit 1";
            Statement s1=c.createStatement();
            ResultSet rs2=s.executeQuery(sql);
-           int idpaciente=rs.getInt("idpaciente");
+           int idpaciente=rs2.getInt("idpaciente");
            rs2.close();
            
            String sql1="insert into personapaciente(idpaciente,idpersona) values(?,?)";
@@ -86,6 +90,7 @@ public class PacienteDao implements Dao{
                 pac.setMaterno(r.getString("aMaterno"));
                 pac.setEmail( r.getString("email"));
                 pac.setTelefono(r.getString("telefono"));
+                pac.setEdad(r.getInt("edad"));
                 lista.add(pac);
             }
             r.close();
