@@ -5,6 +5,7 @@
  */
 package Dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.sql.*;
@@ -17,7 +18,29 @@ public class RecetaDao implements Dao{
 
     @Override
     public boolean alta(Object o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        boolean correcto=false;
+        try
+        {
+            Receta r=(Receta) o;
+            Connection c=new DataSource().getConexion();
+            String sql="insert into receta(iddoctor,idpaciente,idtratamiento,fecha,observaciones)"
+                    + "values(?,?,?,now(),?)";
+            PreparedStatement ps=c.prepareStatement(sql);
+            ps.setInt(1, r.getIdDoctor());
+            ps.setInt(2, r.getIdPaciente());
+            ps.setInt(3, r.getIdTratamiento());
+            ps.setString(4, r.getObservacones());
+            int i=ps.executeUpdate();
+            if(i>0)
+                correcto=true;
+            ps.close();
+            c.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return correcto;
     }
 
     @Override

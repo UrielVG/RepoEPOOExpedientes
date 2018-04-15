@@ -43,6 +43,118 @@ public class Control extends HttpServlet {
             }
             
         }
+        if(pagina.equals("altaReceta"))
+        {
+            Receta r=new Receta();
+            r.setnDoctor(request.getParameter("doctor"));
+            r.setnPaciente(request.getParameter("paciente"));
+            r.setDiagnostico(request.getParameter("tratamiento"));
+            
+            r.setObservacones(request.getParameter("observaciones"));
+            ArrayList<Doctor> doc=new ArrayList<Doctor>();
+            ArrayList<Paciente> pac=new ArrayList<Paciente>();
+            ArrayList<Tratamiento> tra=new ArrayList<Tratamiento>();
+            DoctorDao dd=new DoctorDao();
+            doc=dd.consulta();
+            for(Doctor d:doc)
+            {
+                if(d.getNombre().equals(r.getnDoctor()))
+                    r.setIdDoctor(d.getIdDoctor());
+            }
+            PacienteDao pd=new PacienteDao();
+            pac=pd.consulta();
+            for(Paciente d:pac)
+            {
+                if(d.getNombre().equals(r.getnPaciente()))
+                    r.setIdPaciente(d.getIdPaciente());
+            }
+            TratamientoDao td=new TratamientoDao();
+            tra=td.consulta();
+            for(Tratamiento d:tra)
+            {
+                if(d.getDiagnostico().equals(r.getDiagnostico()))
+                    r.setIdTratamiento(d.getIdTratamiento());
+            }
+            RecetaDao rd=new RecetaDao();
+            boolean correcto=rd.alta(r);
+            if(correcto)
+                response.sendRedirect("Principal.jsp");
+            else
+                response.sendRedirect("AltaReceta.jsp");
+        }
+        if(pagina.equals("altaTratamiento"))
+        {
+            Tratamiento t=new Tratamiento();
+            t.setDiagnostico(request.getParameter("diagnostico"));
+            t.setMedicamento(request.getParameter("medicamento"));
+            MedicamentoDao md=new MedicamentoDao();
+            DiagnosticoDao dd=new DiagnosticoDao();
+            ArrayList<Medicamento> medi=new ArrayList();
+            ArrayList<Diagnostico> dia=new ArrayList();
+            medi=md.consulta();
+            dia=dd.consulta();
+            for(Medicamento m:medi)
+            {
+                if(m.getNombre().equals(t.getMedicamento()))
+                    t.setIdMedicamento(m.getIdMedicamento());
+            }
+            for(Diagnostico d:dia)
+            {
+                if(d.getNombre().equals(t.getDiagnostico()))
+                    t.setIdDiagnostico(d.getIdDiagnostico());
+            }
+            TratamientoDao td=new TratamientoDao();
+            boolean correcto=td.alta(t);
+            if(correcto)
+                response.sendRedirect("Principal.jsp");
+            else
+                response.sendRedirect("AltaTratamiento.jsp");
+        }
+        if(pagina.equals("altaDoctor"))
+        {
+            Doctor doc=new Doctor();
+            doc.setNombre(request.getParameter("nombre"));
+            doc.setPaterno(request.getParameter("paterno"));
+            doc.setMaterno(request.getParameter("materno"));
+            doc.setEdad(Integer.parseInt(request.getParameter("edad")));
+            doc.setEmail(request.getParameter("email"));
+            doc.setCedula(request.getParameter("cedula"));
+            doc.setClave(request.getParameter("cotraseña"));
+            doc.setUsuario(request.getParameter("usuario"));
+            doc.setTelefono(request.getParameter("telefono"));
+            
+            DoctorDao dd=new DoctorDao();
+            boolean correcto=dd.alta(doc);
+            if(correcto)
+                response.sendRedirect("Principal.jsp");
+            else
+                response.sendRedirect("AltaDoctor.jsp");
+        }
+        if(pagina.equals("altaMedicamento"))
+        {
+            Medicamento med=new Medicamento();
+            med.setNombre(request.getParameter("nombre"));
+            med.setMarca(request.getParameter("marca"));
+            med.setSubstancia(request.getParameter("substancia"));
+            MedicamentoDao md=new MedicamentoDao();
+            boolean correcto=md.alta(med);
+            if(correcto)
+                response.sendRedirect("Principal.jsp");
+            else
+                response.sendRedirect("AltaMedicamento.jsp");
+        }
+        if(pagina.equals("altaDiagnostico"))
+        {
+            Diagnostico dia=new Diagnostico();
+            dia.setNombre(request.getParameter("nombre"));
+            
+            DiagnosticoDao dd=new DiagnosticoDao();
+            boolean correcto=dd.alta(dia);
+            if(correcto)
+                response.sendRedirect("Principal.jsp");
+            else
+                response.sendRedirect("AltaDiagnostico.jsp");
+        }
         if(pagina.equals("altaPaciente"))
         {
             Paciente pa=new Paciente();
