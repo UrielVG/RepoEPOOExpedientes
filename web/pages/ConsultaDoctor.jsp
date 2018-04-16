@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Control Expedientes</title>
+    <title>Consulta Doctores</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Expedientes</a>
+                <a class="navbar-brand" href="index.html">Consulta Doctor</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -123,7 +123,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

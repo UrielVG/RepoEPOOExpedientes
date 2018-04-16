@@ -23,33 +23,46 @@ public class DoctorDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into doctor(cedula,clave) values(?,?)";
+           String sql="insert into doctor(cedula,usuario,contraseña) values(?,?,?)";
            PreparedStatement ps=c.prepareStatement(sql);
            Doctor doc=(Doctor)o;
            ps.setString(1,doc.getCedula());
-           ps.setString(2, doc.getClave());
+           ps.setString(2, doc.getUsuario());
+           ps.setString(3, doc.getClave());
            
            int r=ps.executeUpdate();
            if(r>0)
                b=true;
            b=false;
-           Persona per=(Persona)o;
-           PersonaDao pd=new PersonaDao();
-           b=pd.alta(per);
+           
+           String sqlper="insert into persona(nombre,aPaterno,aMaterno,email,telefono,edad) values(?,?,?,?,?,?)";
+           PreparedStatement psper=c.prepareStatement(sqlper);
+           
+           psper.setString(1,doc.getNombre());
+           psper.setString(2, doc.getPaterno());
+           psper.setString(3, doc.getMaterno());
+           psper.setString(4, doc.getEmail());
+           psper.setString(5, doc.getTelefono());
+           psper.setInt(6, doc.getEdad());
+           int r3=psper.executeUpdate();
+           if(r3>0)
+               b=true;
            String sql2="select idPersona from persona order by 1 desc limit 1";
            Statement s=c.createStatement();
-           ResultSet rs=s.executeQuery(sql);
+           ResultSet rs=s.executeQuery(sql2);
+           rs.next();
            int idpersona=rs.getInt("idpersona");
-           rs.close();
+           
            
            String sql3="select iddoctor from doctor order by 1 desc limit 1";
            Statement s1=c.createStatement();
-           ResultSet rs2=s.executeQuery(sql);
+           ResultSet rs2=s.executeQuery(sql3);
+           rs2.next();
            int iddoctor=rs2.getInt("iddoctor");
-           rs2.close();
+           
            
            String sql1="insert into personadoctor(iddoctor,idpersona) values(?,?)";
-           PreparedStatement ps1=c.prepareStatement(sql);
+           PreparedStatement ps1=c.prepareStatement(sql1);
            ps1.setInt(1, iddoctor);
            ps1.setInt(2, idpersona);
            int r2=ps1.executeUpdate();
@@ -57,7 +70,8 @@ public class DoctorDao implements Dao{
            if(r2>0)
                b=true;
            ps1.close();
-           
+           rs.close();
+           rs2.close();
            ps.close();
            c.close();
        }

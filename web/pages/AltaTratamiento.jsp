@@ -118,7 +118,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -164,7 +164,7 @@
                                                     for(Medicamento m:med)
                                                     {
                                                 %>
-                                                <option><%=m.getNombre%></option>
+                                                <option><%=m.getNombre()%></option>
                                                 <%
                                                     }
                                                 %>
@@ -183,7 +183,7 @@
                                                     for(Diagnostico d:dia)
                                                     {
                                                 %>
-                                                <option><%=d.getNombre%></option>
+                                                <option><%=d.getNombre()%></option>
                                                 <%
                                                     }
                                                 %>

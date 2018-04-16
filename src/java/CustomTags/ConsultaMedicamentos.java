@@ -6,6 +6,7 @@
 package CustomTags;
 import javax.servlet.jsp.tagext.*;
 import javax.servlet.jsp.*;
+import javax.servlet.*;
 import Dao.*;
 import java.util.*;
 /**
@@ -13,18 +14,23 @@ import java.util.*;
  * @author Uriel Villegas
  */
 public class ConsultaMedicamentos extends TagSupport{
-    JspWriter out=pageContext.getOut();
+    ArrayList<Medicamento> medi;
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int doStartTag()
     {
-        ArrayList<Medicamento> medi=new ArrayList();
+        JspWriter out=pageContext.getOut();
+        
         MedicamentoDao md=new MedicamentoDao();
         medi=md.consulta();
         try
         {
-            if(medi.isEmpty())
-                out.println("<tr><td>No hay Medicamentos registrados</tr>");
-            else
+            
+            
             {
                 for(Medicamento m:medi)
                 {

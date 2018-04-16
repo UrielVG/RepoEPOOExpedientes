@@ -22,19 +22,19 @@ public class PersonaDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into persona(nombre,aPaterno,aMaterno,email,telefono,edad) values(?,?,?,?,?,?)";
-           PreparedStatement ps=c.prepareStatement(sql);
+           String sqlper="insert into persona(nombre,aPaterno,aMaterno,email,telefono,edad) values(?,?,?,?,?,?)";
+           PreparedStatement psper=c.prepareStatement(sqlper);
            Persona per=(Persona)o;
-           ps.setString(1,per.getNombre());
-           ps.setString(2, per.getPaterno());
-           ps.setString(3, per.getMaterno());
-           ps.setString(4, per.getEmail());
-           ps.setString(5, per.getTelefono());
-           ps.setInt(6, per.getEdad());
-           int r=ps.executeUpdate();
+           psper.setString(1,per.getNombre());
+           psper.setString(2, per.getPaterno());
+           psper.setString(3, per.getMaterno());
+           psper.setString(4, per.getEmail());
+           psper.setString(5, per.getTelefono());
+           psper.setInt(6, per.getEdad());
+           int r=psper.executeUpdate();
            if(r>0)
                b=true;
-           ps.close();
+           psper.close();
            c.close();
        }
        catch(SQLException e)

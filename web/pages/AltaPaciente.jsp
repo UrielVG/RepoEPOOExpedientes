@@ -119,7 +119,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

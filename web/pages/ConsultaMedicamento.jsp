@@ -112,7 +112,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -123,34 +123,39 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        <div class="row">
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Consulta Medicamentos</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Medicamentos
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <table width="100%" class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>id</th>
+                                        <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Marca</th>
                                         <th>Substancia</th>
-                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="gradeU">
+                                    <tr class="odd gradeA">
                                         <c:ConsultaMedicamentos/>
-                                        
                                     </tr>
                                     
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
-                            
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -158,6 +163,9 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <!-- /.row -->
+        </div>
+    </div>
         
     
     <!-- jQuery -->

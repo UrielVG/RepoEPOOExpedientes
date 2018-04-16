@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Control Expedientes</title>
+    <title>Consulta Pacientes</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -55,7 +55,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Expedientes</a>
+                <a class="navbar-brand" href="index.html">Consulta Pacientes</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -123,7 +123,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -134,19 +134,25 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Consulta Pacientes</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
          <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Pacientes
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>ID</th>
                                         <th>Nombre</th>
                                         <th>Paterno</th>
                                         <th>Materno</th>
@@ -173,6 +179,8 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+        </div>
+    </div>
         
     
     <!-- jQuery -->

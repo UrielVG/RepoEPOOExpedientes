@@ -78,9 +78,9 @@ public class Control extends HttpServlet {
             RecetaDao rd=new RecetaDao();
             boolean correcto=rd.alta(r);
             if(correcto)
-                response.sendRedirect("Principal.jsp");
+                response.sendRedirect("pages/Principal.jsp");
             else
-                response.sendRedirect("AltaReceta.jsp");
+                response.sendRedirect("pages/AltaReceta.jsp");
         }
         if(pagina.equals("altaTratamiento"))
         {
@@ -106,9 +106,9 @@ public class Control extends HttpServlet {
             TratamientoDao td=new TratamientoDao();
             boolean correcto=td.alta(t);
             if(correcto)
-                response.sendRedirect("Principal.jsp");
+                response.sendRedirect("pages/Principal.jsp");
             else
-                response.sendRedirect("AltaTratamiento.jsp");
+                response.sendRedirect("pages/AltaTratamiento.jsp");
         }
         if(pagina.equals("altaDoctor"))
         {
@@ -119,16 +119,16 @@ public class Control extends HttpServlet {
             doc.setEdad(Integer.parseInt(request.getParameter("edad")));
             doc.setEmail(request.getParameter("email"));
             doc.setCedula(request.getParameter("cedula"));
-            doc.setClave(request.getParameter("cotraseña"));
+            doc.setClave(request.getParameter("contra"));
             doc.setUsuario(request.getParameter("usuario"));
             doc.setTelefono(request.getParameter("telefono"));
             
             DoctorDao dd=new DoctorDao();
             boolean correcto=dd.alta(doc);
             if(correcto)
-                response.sendRedirect("Principal.jsp");
+                response.sendRedirect("pages/login.htlm");
             else
-                response.sendRedirect("AltaDoctor.jsp");
+                response.sendRedirect("pages/AltaDoctor.jsp");
         }
         if(pagina.equals("altaMedicamento"))
         {
@@ -139,9 +139,9 @@ public class Control extends HttpServlet {
             MedicamentoDao md=new MedicamentoDao();
             boolean correcto=md.alta(med);
             if(correcto)
-                response.sendRedirect("Principal.jsp");
+                response.sendRedirect("pages/Principal.jsp");
             else
-                response.sendRedirect("AltaMedicamento.jsp");
+                response.sendRedirect("pages/AltaMedicamento.jsp");
         }
         if(pagina.equals("altaDiagnostico"))
         {
@@ -151,9 +151,9 @@ public class Control extends HttpServlet {
             DiagnosticoDao dd=new DiagnosticoDao();
             boolean correcto=dd.alta(dia);
             if(correcto)
-                response.sendRedirect("Principal.jsp");
+                response.sendRedirect("pages/Principal.jsp");
             else
-                response.sendRedirect("AltaDiagnostico.jsp");
+                response.sendRedirect("pages/AltaDiagnostico.jsp");
         }
         if(pagina.equals("altaPaciente"))
         {
@@ -168,9 +168,9 @@ public class Control extends HttpServlet {
             PacienteDao pd= new PacienteDao();
             boolean correcto=pd.alta(pa);
             if(correcto)
-                response.sendRedirect("login.html");
+                response.sendRedirect("pages/Principal.jsp");
             else
-                response.sendRedirect("AltaPaciente.jsp");
+                response.sendRedirect("pages/AltaPaciente.jsp");
         }
     }
     public Doctor login(String usuario,String contrasena)

@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Contraseña</label>
-                                            <input class="form-control" name="contraseña" maxlength="8" minlength="4" >
+                                            <input class="form-control" name="contra" maxlength="8" minlength="4" >
                                             <p class="help-block">Minimo 4 caracteres y maximo 8</p>
                                         </div>
                                         <button type="submit" class="btn btn-default">Aceptar</button>

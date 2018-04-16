@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tratamiento</title>
+    <title>Receta</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Nuevo Tratamiento</a>
+                <a class="navbar-brand" href="index.html">Nuevo Receta</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -118,7 +118,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -143,7 +143,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Nuevo Tratamiento
+                            Nuevo Receta
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -165,7 +165,7 @@
                                                     for(Paciente d:pac)
                                                     {
                                                 %>
-                                                <option><%=d.getNombre%></option>
+                                                <option><%=d.getNombre()%></option>
                                                 <%
                                                     }
                                                 %>
@@ -178,13 +178,13 @@
                                             <label>Doctor</label>
                                             <select class="form-control" name="doctor">
                                                 <%
-                                                    ArrayList<Doctor> pac=new ArrayList();
-                                                    DoctorDao dd=new DoctorDao();
-                                                    pac=dd.consulta();
-                                                    for(Doctor d:pac)
+                                                    ArrayList<Doctor> paci=new ArrayList();
+                                                    DoctorDao dod=new DoctorDao();
+                                                    paci=dod.consulta();
+                                                    for(Doctor d:paci)
                                                     {
                                                 %>
-                                                <option><%=d.getNombre%></option>
+                                                <option><%=d.getNombre()%></option>
                                                 <%
                                                     }
                                                 %>
@@ -197,13 +197,13 @@
                                             <label>Medicamento</label>
                                             <select class="form-control" name="tratamiento" >
                                                 <%
-                                                    ArrayList<Tratamiento> tra=new ArrayList();
+                                                    ArrayList<Tratamiento> med=new ArrayList();
                                                     TratamientoDao md=new TratamientoDao();
                                                     med=md.consulta();
                                                     for(Tratamiento m:med)
                                                     {
                                                 %>
-                                                <option><%=m.getDiagnostico%></option>
+                                                <option><%=m.getDiagnostico()%></option>
                                                 <%
                                                     }
                                                 %>

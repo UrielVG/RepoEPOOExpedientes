@@ -50,13 +50,13 @@ public class RecetaDao implements Dao{
         try
         {
             Connection c=new DataSource().getConexion();
-            String sql="select idreceta,p1.nombre,p.nombre,fecha,t.idtratamiento,observaciones,p.idpaciente,p1.iddoctor from receta r"
-                    + "join personapaciente pp on pp.idpaciente=r.idpaciente"
-                    + "join persona p on p.idpersona=pp.idpersona"
-                    + "join personadoctor pd on pd.iddoctor=r.iddoctor"
-                    + "join persona p1 on p1.idpersona=pd.idpersona"
-                    + "join tratamiento t on t.idtratamiento=r.idtratamiento"
-                    + "join diagnostico d on d.iddiagnostico=t.iddiagnostico"
+            String sql="select idreceta,p1.nombre,p.nombre,fecha,t.idtratamiento,observaciones,pp.idpaciente,pd.iddoctor,d.nombre,m.nombre from receta r "
+                    + "join personapaciente pp on pp.idpaciente=r.idpaciente "
+                    + "join persona p on p.idpersona=pp.idpersona "
+                    + "join personadoctor pd on pd.iddoctor=r.iddoctor "
+                    + "join persona p1 on p1.idpersona=pd.idpersona "
+                    + "join tratamiento t on t.idtratamiento=r.idtratamiento "
+                    + "join diagnostico d on d.iddiagnostico=t.iddiagnostico "
                     + "join medicamento m on m.idmedicamento=t.idmedicamento";
             Statement s=c.createStatement();
             ResultSet rs=s.executeQuery(sql);
@@ -70,8 +70,10 @@ public class RecetaDao implements Dao{
                 receta.setFecha(rs.getString("fecha"));
                 receta.setIdTratamiento(rs.getInt("t.idtratamiento"));
                 receta.setObservacones(rs.getString("observaciones"));
-                receta.setIdPaciente(rs.getInt("p.idpaciente"));
-                receta.setIdDoctor(rs.getInt("p1.iddoctor"));
+                receta.setIdPaciente(rs.getInt("pp.idpaciente"));
+                receta.setIdDoctor(rs.getInt("pd.iddoctor"));
+                receta.setMedicamento(rs.getString("m.nombre"));
+                receta.setDiagnostico(rs.getString("d.nombre"));
                 recetas.add(receta);           
             }
             rs.close();

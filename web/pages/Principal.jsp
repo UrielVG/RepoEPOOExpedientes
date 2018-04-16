@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Pagina Principal</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Control de Consultas Medicas</a>
+                <a class="navbar-brand" href="index.html">Pagina Principal</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -93,7 +93,10 @@
                                     <a href="ConsultaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
                                 <li>
-                                    <a href="Recetas.jsp">Recetas</a>
+                                    <a href="ConsultaTratamiento.jsp"> Tratamiento</a>
+                                </li>
+                                <li>
+                                    <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -106,16 +109,19 @@
                                     <a href="AltaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="notifications.html"> Medicina </a>
+                                    <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
                                 <li>
-                                    <a href="typography.html"> Doctor</a>
+                                    <a href="AltaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="icons.html"> Tratamiento </a>
+                                    <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="grid.html"> Consulta </a>
+                                    <a href="AltaDiagnostico.jsp"> Diagnostico </a>
+                                </li>
+                                <li>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

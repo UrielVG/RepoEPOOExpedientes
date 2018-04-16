@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Alta Medicamento</a>
+                <a class="navbar-brand" href="index.html">Alta Diagnostico</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -118,7 +118,7 @@
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaConsulta.jsp"> Consulta </a>
+                                    <a href="AltaReceta.jsp"> Receta </a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -133,7 +133,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Medicamento Nuevo</h1>
+                    <h1 class="page-header">Diagnostico Nuevo</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -143,7 +143,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Datos del Medicamento
+                            Diagnostico
                         </div>
                         <div class="panel-body">
                             <div class="row">
