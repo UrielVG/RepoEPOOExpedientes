@@ -23,7 +23,7 @@ public class TratamientoDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into tratamiento(idMedicamento,idDiagnostico) values(?,?)";
+           String sql="insert into tratamiento(idMedicamento,idDiagnostico,fecha) values(?,?,now())";
            PreparedStatement ps=c.prepareStatement(sql);
            Tratamiento tratamiento=(Tratamiento)o;
            ps.setInt(1, tratamiento.getIdMedicamento());
@@ -64,6 +64,7 @@ public class TratamientoDao implements Dao{
                 tratamiento.setIdMedicamento(r.getInt("idMedicamento"));
                 tratamiento.setDiagnostico(r.getString("d.nombre"));
                 tratamiento.setMedicamento(r.getString("m.nombre"));
+                tratamiento.setFecha(r.getString("fecha"));
                 tratamientos.add(tratamiento);
             }
             r.close();

@@ -50,7 +50,7 @@ public class RecetaDao implements Dao{
         try
         {
             Connection c=new DataSource().getConexion();
-            String sql="select idreceta,p1.nombre,p.nombre,fecha,t.idtratamiento,observaciones,pp.idpaciente,pd.iddoctor,d.nombre,m.nombre from receta r "
+            String sql="select idreceta,p1.nombre,p.nombre,r.fecha,t.idtratamiento,observaciones,pp.idpaciente,pd.iddoctor,d.nombre,m.nombre from receta r "
                     + "join personapaciente pp on pp.idpaciente=r.idpaciente "
                     + "join persona p on p.idpersona=pp.idpersona "
                     + "join personadoctor pd on pd.iddoctor=r.iddoctor "
@@ -67,7 +67,7 @@ public class RecetaDao implements Dao{
                 receta.setIdReceta(rs.getInt("idreceta"));
                 receta.setnPaciente(rs.getString("p.nombre"));
                 receta.setnDoctor(rs.getString("p1.nombre"));
-                receta.setFecha(rs.getString("fecha"));
+                receta.setFecha(rs.getString("r.fecha"));
                 receta.setIdTratamiento(rs.getInt("t.idtratamiento"));
                 receta.setObservacones(rs.getString("observaciones"));
                 receta.setIdPaciente(rs.getInt("pp.idpaciente"));

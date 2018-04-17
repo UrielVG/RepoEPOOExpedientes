@@ -12,6 +12,7 @@ package Dao;
 public class Diagnostico {
     private int idDiagnostico;
     private String nombre;
+    private String fecha;
 
     /**
      * @return the idDiagnostico
@@ -39,6 +40,20 @@ public class Diagnostico {
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
     
 }

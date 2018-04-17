@@ -23,7 +23,7 @@ public class DoctorDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into doctor(cedula,usuario,contraseña) values(?,?,?)";
+           String sql="insert into doctor(cedula,usuario,contraseña,fecha) values(?,?,?,now())";
            PreparedStatement ps=c.prepareStatement(sql);
            Doctor doc=(Doctor)o;
            ps.setString(1,doc.getCedula());
@@ -88,7 +88,7 @@ public class DoctorDao implements Dao{
         try
         {
             Connection c=new DataSource().getConexion();
-            String sql="select p.idpersona,d.iddoctor,p.nombre,p.apaterno,p.amaterno,cedula,telefono,usuario,contraseña,email,edad from Doctor d join personadoctor pd on pd.iddoctor=d.iddoctor join persona p on p.idpersona=pd.idpersona";
+            String sql="select p.idpersona,d.iddoctor,p.nombre,p.apaterno,p.amaterno,cedula,telefono,usuario,contraseña,email,edad,fecha from Doctor d join personadoctor pd on pd.iddoctor=d.iddoctor join persona p on p.idpersona=pd.idpersona";
             PreparedStatement ps=c.prepareStatement(sql);
             ResultSet r=ps.executeQuery();
             lista=new ArrayList();
@@ -106,6 +106,7 @@ public class DoctorDao implements Dao{
                 doc.setUsuario(r.getString("usuario"));
                 doc.setClave(r.getString("contraseña"));
                 doc.setEdad(r.getInt("edad"));
+                doc.setFecha(r.getString("fecha"));
                 lista.add(doc);
             }
             r.close();

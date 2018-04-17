@@ -1,7 +1,7 @@
 <%-- 
-    Document   : AltaDiagnostico
-    Created on : 14/04/2018, 12:57:59 PM
-    Author     : Uriel Villegas
+    Document   : ControlLogin
+    Created on : 16/04/2018, 09:03:27 PM
+    Author     : Unitec
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alta Diagnostico</title>
+    <title>Consulta Doctores</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -39,6 +39,7 @@
     <![endif]-->
     </head>
     <body>
+        <%@taglib uri="/WEB-INF/META-INF/ConsultaLogin" prefix="c"%>
         <div id="wrapper">
 
         <!-- Navigation -->
@@ -50,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Alta Diagnostico</a>
+                <a class="navbar-brand" href="index.html">Control de Login</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -58,7 +59,10 @@
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i>
+                        
+                        
+                        <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Cerrar sesión</a>
@@ -81,7 +85,7 @@
                                     <a href="ConsultaPaciente.jsp"> Paciente</a>
                                 </li>
                                 <li>
-                                    <a href="ConsultaMedicina.jsp"> Medicinas</a>
+                                    <a href="ConsultaMedicamento.jsp"> Medicinas</a>
                                 </li>
                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
@@ -115,10 +119,10 @@
                                     <a href="AltaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
-                                    <a href="AltaDiagnostico.jsp"> Diagnosticos</a>
+                                    <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
                                 <li>
-                                    <a href="AltaTratamiento.jsp"> Tratamiento </a>
+                                    <a href="AltaDiagnostico.jsp"> Diagnostico </a>
                                 </li>
                                 <li>
                                     <a href="AltaReceta.jsp"> Receta </a>
@@ -132,66 +136,49 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-        
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Diagnostico Nuevo</h1>
+                    <h1 class="page-header">Control de Login</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            
-            <div class="row">
-                <div class="col-lg-12">
+        <div class="row">
+                <div class="col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Diagnostico
+                            Control de Login
                         </div>
+                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <form role="form" action="../control" method="post">
-                                        <input type="hidden" name="pagina" value="altaDiagnostico">
-                                        <div class="form-group">
-                                            <label>Nombre</label>
-                                            <input class="form-control" name="nombre"  >
-                                            <p class="help-block"></p>
-                                        </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>Fecha</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <c:ConsultaLogin/>
                                         
-                                        
-                                        <button type="submit" class="btn btn-default">Aceptar</button>
-                                        <button type="reset" class="btn btn-default">Borrar Todo</button>
-                                        
-                                    </form>
-                                </div>
-                                <!-- /.col-lg-6 (nested) -->
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- /.row (nested) -->
+                            <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
                 </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+                <!-- /.col-lg-6 -->
         </div>
-        <!-- /#page-wrapper -->
-
-    </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
-    </body>
+        </div>
+        </div>
+                
+    
+        </body>
 </html>

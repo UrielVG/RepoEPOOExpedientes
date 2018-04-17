@@ -46,6 +46,7 @@ public class ConsultaPaciente extends TagSupport{
                     out.println("<td>" + pac.getEmail()+ "</td>");
                     out.println("<td>" + pac.getEdad()+ "</td>");
                     out.println("<td>" + pac.getTelefono()+ "</td>");
+                    out.println("<td>"+pac.getFecha());
                     out.println("</tr>");
 
                 } catch (IOException ex) {

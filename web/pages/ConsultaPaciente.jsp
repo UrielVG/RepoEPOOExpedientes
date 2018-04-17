@@ -100,6 +100,9 @@
                                 <li>
                                     <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
+                                <li>
+                                    <a href="ControlLogin.jsp">Control de Login</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -156,10 +159,11 @@
                                         <th>Nombre</th>
                                         <th>Paterno</th>
                                         <th>Materno</th>
-                                        <th>Edad</th>
-                                        <th>E-Mail</th>
-                                        <th>Telefono</th>
                                         
+                                        <th>E-Mail</th>
+                                        <th>Edad</th>
+                                        <th>Telefono</th>
+                                        <th>Fecha de registro</th>
                                     </tr>
                                 </thead>
                                 <tbody>

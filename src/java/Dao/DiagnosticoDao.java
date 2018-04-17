@@ -23,7 +23,7 @@ public class DiagnosticoDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into Diagnostico(nombre) values(?)";
+           String sql="insert into Diagnostico(nombre,fecha) values(?,now())";
            PreparedStatement ps=c.prepareStatement(sql);
            Diagnostico dia=(Diagnostico)o;
            ps.setString(1, dia.getNombre());
@@ -60,7 +60,7 @@ public class DiagnosticoDao implements Dao{
                 
                 diagnostico.setIdDiagnostico(r.getInt("idDiagnostico"));
                 diagnostico.setNombre(r.getString("nombre"));
-                
+                diagnostico.setFecha(r.getString("fecha"));
                 lista.add(diagnostico);
             }
             r.close();

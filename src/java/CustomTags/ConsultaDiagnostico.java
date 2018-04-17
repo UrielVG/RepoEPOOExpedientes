@@ -37,6 +37,7 @@ public class ConsultaDiagnostico extends TagSupport {
                     out.println("<tr>");
                     out.println("<td>"+d.getIdDiagnostico());
                     out.println("<td>"+d.getNombre());
+                    out.println("<td>"+d.getFecha());
                     out.println("</tr>");
                 }
             }

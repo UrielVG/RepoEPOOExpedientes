@@ -39,7 +39,8 @@ public class ConsultaMedicamentos extends TagSupport{
                     out.println("<td>"+m.getNombre());
                     out.println("<td>"+m.getMarca());
                     out.println("<td>"+m.getSubstancia());
-                    out.println("<tr>");
+                    out.println("<td>"+m.getFecha());
+                    out.println("</tr>");
                 }
             }
         }

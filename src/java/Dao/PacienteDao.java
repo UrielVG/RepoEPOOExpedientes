@@ -24,7 +24,7 @@ public class PacienteDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into paciente values()";
+           String sql="insert into paciente(fecha) values(now())";
            PreparedStatement ps=c.prepareStatement(sql);
            
            
@@ -102,6 +102,7 @@ public class PacienteDao implements Dao{
                 pac.setEmail( r.getString("email"));
                 pac.setTelefono(r.getString("telefono"));
                 pac.setEdad(r.getInt("edad"));
+                pac.setFecha(r.getString("fecha"));
                 lista.add(pac);
             }
             r.close();

@@ -12,6 +12,7 @@ package Dao;
 public class Doctor extends Persona {
     private String cedula,clave,usuario;
     private int idDoctor;
+    private String fecha;
     
     
 
@@ -69,6 +70,20 @@ public class Doctor extends Persona {
      */
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
     
 }

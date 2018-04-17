@@ -24,7 +24,7 @@ public class MedicamentoDao implements Dao{
        try
        {
            Connection c=new DataSource().getConexion();
-           String sql="insert into Medicamento(nombre,marca,substancia) values(?,?,?)";
+           String sql="insert into Medicamento(nombre,marca,substancia,fecha) values(?,?,?,now())";
            PreparedStatement ps=c.prepareStatement(sql);
            Medicamento med=(Medicamento)o;
            ps.setString(1, med.getNombre());
@@ -64,6 +64,7 @@ public class MedicamentoDao implements Dao{
                 med.setNombre(r.getString("nombre"));
                 med.setMarca(r.getString("marca"));
                 med.setSubstancia(r.getString("substancia"));
+                med.setFecha(r.getString("fecha"));
                 lista.add(med);
             }
             r.close();

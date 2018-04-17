@@ -14,6 +14,7 @@ public class Medicamento {
     private String nombre;
     private String marca;
     private String substancia;
+    private String fecha;
 
     /**
      * @return the idMedicamento
@@ -69,5 +70,19 @@ public class Medicamento {
      */
     public void setSubstancia(String substancia) {
         this.substancia = substancia;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 }

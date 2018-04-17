@@ -35,6 +35,7 @@ public class ConsultaTratamiento extends TagSupport {
                     out.println("<td>"+t.getIdTratamiento());
                     out.println("<td>"+t.getDiagnostico());
                     out.println("<td>"+t.getMedicamento());
+                    out.println("<td>"+t.getFecha());
                     out.println("</tr>");
                 }
                 

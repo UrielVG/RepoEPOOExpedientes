@@ -89,6 +89,9 @@
                                 <li>
                                     <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
+                                <li>
+                                    <a href="ControlLogin.jsp">Control de Login</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -146,6 +149,7 @@
                                         <th>Nombre</th>
                                         <th>Marca</th>
                                         <th>Substancia</th>
+                                        <th>Fecha de registro</th>
                                     </tr>
                                 </thead>
                                 <tbody>

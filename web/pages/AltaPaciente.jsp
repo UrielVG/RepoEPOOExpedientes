@@ -96,6 +96,9 @@
                                 <li>
                                     <a href="ConsultaReceta.jsp">Recetas</a>
                                 </li>
+                                <li>
+                                    <a href="ControlLogin.jsp">Control de Login</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

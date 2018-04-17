@@ -33,14 +33,18 @@ public class Control extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String pagina=request.getParameter("pagina");
-        if(pagina.equals("login"))
+        if(pagina.equals("login")||pagina.equals("loginError"))
         {
             
             Doctor existe=login(request.getParameter("usuario"),request.getParameter("contrasena"));
             if(existe!=null){
                 request.setAttribute("usuario", existe);
+                ControlLoginDao cl=new  ControlLoginDao();
+                cl.alta(existe);
                 response.sendRedirect("pages/Principal.jsp");
             }
+            else
+                response.sendRedirect("pages/loginError.jsp");
             
         }
         if(pagina.equals("altaReceta"))
@@ -126,7 +130,7 @@ public class Control extends HttpServlet {
             DoctorDao dd=new DoctorDao();
             boolean correcto=dd.alta(doc);
             if(correcto)
-                response.sendRedirect("pages/login.htlm");
+                response.sendRedirect("pages/login.html");
             else
                 response.sendRedirect("pages/AltaDoctor.jsp");
         }

@@ -10,11 +10,26 @@ package Dao;
  * @author Unitec
  */
 public class Tratamiento {
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
     private int idTratamiento;
     private int idMedicamento;
     private int idDiagnostico;
     private String diagnostico;
     private String medicamento;
+    private String fecha;
 
     /**
      * @return the idTratamiento

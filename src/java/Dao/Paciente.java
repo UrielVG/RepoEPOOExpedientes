@@ -11,6 +11,7 @@ package Dao;
  */
 public class Paciente extends Persona{
     private int idPaciente;
+    private String fecha;
 
     /**
      * @return the idPaciente
@@ -24,6 +25,20 @@ public class Paciente extends Persona{
      */
     public void setIdPaciente(int idPaciente) {
         this.idPaciente = idPaciente;
+    }
+
+    /**
+     * @return the fecha
+     */
+    public String getFecha() {
+        return fecha;
+    }
+
+    /**
+     * @param fecha the fecha to set
+     */
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
     
 }
