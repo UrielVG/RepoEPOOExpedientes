@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alta PAciente</title>
+    <title>Alta Paciente</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -84,7 +84,7 @@
                                 <li>
                                     <a href="ConsultaMedicina.jsp"> Medicinas</a>
                                 </li>
-                                <li>
+                                 <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
@@ -112,9 +112,7 @@
                                 <li>
                                     <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
-                                <li>
-                                    <a href="AltaDoctor.jsp"> Doctor</a>
-                                </li>
+                               
                                 <li>
                                     <a href="AltaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
@@ -137,7 +135,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Forms</h1>
+                    <h1 class="page-header">Alta Paciente</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

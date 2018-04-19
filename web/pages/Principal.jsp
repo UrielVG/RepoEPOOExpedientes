@@ -114,9 +114,7 @@
                                 <li>
                                     <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
-                                <li>
-                                    <a href="AltaDoctor.jsp"> Doctor</a>
-                                </li>
+                                
                                 <li>
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>
@@ -139,7 +137,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Bienvenido</h1>
+                    <h1 class="page-header">Bienvenido Selecciona una operación</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

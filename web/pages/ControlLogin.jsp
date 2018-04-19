@@ -115,9 +115,7 @@
                                 <li>
                                     <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
-                                <li>
-                                    <a href="AltaDoctor.jsp"> Doctor</a>
-                                </li>
+                                
                                 <li>
                                     <a href="AltaTratamiento.jsp"> Tratamiento </a>
                                 </li>

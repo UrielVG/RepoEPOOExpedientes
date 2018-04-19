@@ -83,7 +83,7 @@
                                 <li>
                                     <a href="ConsultaMedicina.jsp"> Medicinas</a>
                                 </li>
-                                <li>
+                               <li>
                                     <a href="ConsultaDoctor.jsp"> Doctor</a>
                                 </li>
                                 <li>
@@ -111,9 +111,7 @@
                                 <li>
                                     <a href="AltaMedicamento.jsp"> Medicina </a>
                                 </li>
-                                <li>
-                                    <a href="AltaDoctor.jsp"> Doctor</a>
-                                </li>
+                                
                                 <li>
                                     <a href="AltaDiagnostico.jsp"> Diagnosticos</a>
                                 </li>
